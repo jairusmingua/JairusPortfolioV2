@@ -3,6 +3,7 @@ body{
     padding: 0;
     font-family: 'Lato', sans-serif;
     color: white;
+    background: black;
 }
 ul{
   
@@ -42,6 +43,34 @@ img{
     position: inherit;
   
 } */
+lottie-player{
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transition: 1s;
+}
+lottie-player.done{
+    opacity: 0;
+    
+}
+.loading{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+   
+    background: black;
+    z-index: 10;
+    opacity: 1;
+    transition: 1s;
+}
+.loading.done{
+    opacity: 0;
+    display: none;
+}
 #header{
 
     padding: 9rem 0rem 0rem 0rem;
@@ -158,4 +187,5 @@ nav{
     width: 100%;
     height: 100vh;
     background: black;
+    display: none;
 }
