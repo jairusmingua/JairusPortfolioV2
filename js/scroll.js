@@ -1,8 +1,8 @@
 import  jump  from './jump.module.js';
-const player = document.querySelector('lottie-player');
-$(window).on("load", function() {
+window.addEventListener('load', (ev)=>{
 	loadingDone();
- });
+});
+
 document.querySelector("#scrolltoinfo").addEventListener("click",()=>{
 	scrolltoInfo();
 })

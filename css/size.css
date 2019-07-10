@@ -127,4 +127,8 @@
     .divider{
         margin-top: 4.5rem;
     }
+    lottie-player{
+        height: 400px;
+        width: 400px;
+    }
 }
