@@ -1,0 +1,118 @@
+@media only screen and (max-width: 700px) {
+    .body {
+      display: block
+    }
+    ul{
+        display: none;
+    }
+    .logo{
+        margin: 1rem;
+    }
+    .bubble{
+        padding-bottom: 1rem;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .body {
+      display: block
+    }
+    ul{
+        display: none;
+    }
+    
+    .divider{
+        margin-top: 2rem;
+        display: none;
+    }
+    .bubble-description{
+        font-size: 1rem;
+        
+        padding-bottom: 1rem;
+
+    }
+    .bubble{
+        height: 100%;
+    }
+  }
+
+  @media only screen and (max-device-width: 480px) {
+    body{
+        font-size: 40px;
+    }
+    .body{
+        
+        display: block;
+    }
+    .bubble{
+        height: 40vh;
+        
+        margin:2rem 0rem 2rem 0rem;
+    }
+    .bubble-image{
+        height: 50%;
+    }
+    .bubble-header{
+        font-size: 4rem;
+        padding: 0rem 2rem 0rem 2rem;
+    }
+    .bubble-description{
+        font-size: 3rem;
+        
+        padding: 0rem 2rem 0rem 2rem;
+
+    }
+    .bubble-image>img{
+        
+        object-fit:cover;
+    }
+    .content .header{
+      
+        font-size: 3rem;
+        
+    }
+    #header{
+    
+        padding: relative;
+        padding: 30rem 0rem 0rem 0rem;
+        
+    }
+    
+    #welcome{
+        font-weight: 700;
+        font-size: 6rem;
+        color: white;
+        position: relative;
+        top: 25%;
+        text-align: center;
+    }
+    #label{
+        font-weight: 300;
+        font-size:3rem;
+        color: white;
+        position: relative;
+        top: 25%;
+        text-align: center;
+    }
+    nav{
+         display: flex;
+    top: 0;
+    padding: 1em 1em 0em 1em;
+    
+    position: fixed;
+    height: 10rem;
+    width: 150%;
+    /* background-image: linear-gradient(to bottom,#F87C7C, rgba(255,0,0,0)); */
+    }
+    ul{
+        display: none;
+        
+    }
+    .logo{
+        margin: 2rem;
+        width: 200px;
+        height:auto
+    }
+    .divider{
+        margin-top: 4.5rem;
+    }
+}

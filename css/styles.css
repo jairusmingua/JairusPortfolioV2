@@ -1,0 +1,156 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    
+}
+ul{
+  
+    list-style-type: none;
+    margin-left: 2em;
+    font-weight: 900;
+    color: white;
+    font-size: 1rem;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+#welcome{
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+    top: 25%;
+    text-align: center;
+}
+.profilepic{
+    height: 35vh;
+    width: 35vh;
+    
+    margin: 0 auto;
+    
+}
+.logo{
+    margin: 0 auto;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+#header{
+    
+    padding: 14rem 0rem 0rem 0rem;
+    width: 100%;
+    height: 80vh;
+    background-image: linear-gradient(to bottom,#807CF8,#403E7C);
+    /* background: #F87C7C; */
+    display: inline-table;
+}.logo{
+    margin:1.5rem 0rem 0rem 6rem;
+    font-weight: 700;
+    color: white;
+    width: auto;
+    height: 40px;
+    
+   
+ }
+
+.divider{
+    margin:2rem 0rem 0rem 4rem;
+    width: 2px;
+    height: 25px;
+    background: white;
+    opacity: 0;
+
+}
+#label{
+    font-weight: 300;
+    font-size:1rem;
+    color: white;
+    position: relative;
+    top: 25%;
+    text-align: center;
+    margin-bottom: 1em;
+}
+a{
+    text-emphasis: none;
+    text-decoration: none;
+    color: white;
+}
+li{
+    float: left;
+    padding: 1em 1em;
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    top: 0;
+    padding: 1em 1em 0em 1em;
+    
+    position: fixed;
+    height: 6rem;
+    width: 150%;
+    /* background-image: linear-gradient(to bottom,#F87C7C, rgba(255,0,0,0)); */
+}
+
+.content{
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+    text-align: center;
+    background: white;
+}
+.content .header{
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+    color: #707070;
+}
+.body{
+    
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+    transition: 1s;
+}
+.bubble{
+    margin: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    height:20rem;
+    box-shadow: 1px 0px 10px grey;
+    cursor: pointer;
+}
+.bubble-image{
+    height: auto;
+    width: 90%;
+    margin:1rem 1rem 1rem 1rem;
+    box-shadow: 0px 0px 0px;
+    transition: 1s;
+}
+
+.bubble-image>img{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+}
+.bubble-header{
+    text-align: left;
+    margin: 1rem 1rem 1rem 1rem;
+    font-weight: 700;
+    color: #707070;
+    overflow: hidden;
+}
+.bubble-description{
+    text-align: left;
+    margin: 1rem 1rem 1rem 1rem;
+    font-weight: 300;
+    color: #707070;
+}
+#about{
+    width: 100%;
+    height: 100vh;
+}

@@ -1,0 +1,29 @@
+/* footer{
+    display: flex;
+    position: absolute;
+    right:0;
+    margin: 0rem 5rem 2rem 5rem;
+} */
+.fa-code{ 
+    
+} 
+.fa {
+    padding: 15px;
+    font-size: 4em;
+    /* width: auto;
+    height: auto; */
+    text-align: center;
+    text-decoration: none;
+    vertical-align: center;
+   
+    color: white;
+    
+    margin: 0rem 1px 0rem 1px;
+}
+/* footer>.footername{
+    position: relative;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    color:#707070;
+
+} */
