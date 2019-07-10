@@ -50,12 +50,11 @@ lottie-player{
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    opacity: 1;
+    
     transition: 1s;
 }
 lottie-player.done{
-    opacity: 0;
-    transition: 1s;
+    animation: fade 1s forwards;
 }
 .loading{
     position: absolute;
@@ -64,13 +63,16 @@ lottie-player.done{
    
     background: black;
     z-index: 10;
-    opacity: 1;
+    
     transition: 1s;
 }
 .loading.done{
-    opacity: 0;
-    display: none;
-    transition: 1s;
+    animation: fade 1s forwards;
+}
+@keyframes fade{
+    from{opacity: 1}
+    to{opacity: 0;
+    display: none}
 }
 #header{
 
