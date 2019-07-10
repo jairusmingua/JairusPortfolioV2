@@ -6,8 +6,15 @@
 } */
 .fa-code{ 
     
+}
+.fas {
+  
+   
+    color: white;
+    
+    cursor: pointer;
 } 
-.fa {
+.fab {
     padding: 15px;
     font-size: 4em;
     /* width: auto;
