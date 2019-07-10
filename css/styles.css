@@ -55,7 +55,7 @@ lottie-player{
 }
 lottie-player.done{
     opacity: 0;
-    
+    transition: 1s;
 }
 .loading{
     position: absolute;
@@ -70,6 +70,7 @@ lottie-player.done{
 .loading.done{
     opacity: 0;
     display: none;
+    transition: 1s;
 }
 #header{
 
