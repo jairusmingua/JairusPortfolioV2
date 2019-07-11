@@ -6,13 +6,24 @@ window.addEventListener('load', (ev)=>{
 document.querySelector("#scrolltoinfo").addEventListener("click",()=>{
 	scrolltoInfo();
 })
-	function scrolltoInfo(){
-		jump("#about");
-	}
+document.querySelector("#homebtn").addEventListener("click",()=>{
+	scrolltoHome();
+})
+document.querySelector("#worksbtn").addEventListener("click",()=>{
+	scrolltoInfo();
+})
+function scrolltoInfo(){
+		jump("#about",{
+			offset:-150
+		});
+}
+function scrolltoHome(){
+		jump("#header");
+}
 
 function loadingDone(){
 	console.log("done");
 	document.querySelector(".loading").classList.toggle("done");
-	document.querySelector("lottie-player").classList.toggle("done");
-	player.stop();
+	document.querySelector("#logoloading").classList.toggle("done");
+	
 }
