@@ -45,7 +45,7 @@ img{
 } */
 lottie-player{
     height: 100px;
-    position: absolute;
+    position: f;
     width: 100px;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -89,7 +89,7 @@ lottie-player.done{
     width: auto;
     height: 40px;
     
-   
+   cursor: pointer;
  }
 
 .divider{

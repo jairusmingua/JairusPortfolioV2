@@ -9,6 +9,9 @@ document.querySelector("#scrolltoinfo").addEventListener("click",()=>{
 document.querySelector("#homebtn").addEventListener("click",()=>{
 	scrolltoHome();
 })
+document.querySelector(".logo").addEventListener("click",()=>{
+	scrolltoHome();
+})
 document.querySelector("#worksbtn").addEventListener("click",()=>{
 	scrolltoInfo();
 })
