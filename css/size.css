@@ -133,5 +133,10 @@
     }
     #about{
         height: 91vh;
+        font-size: 2em;
     }
+    .about-body{
+        margin-top: 500px;
+    }
+    
 }
