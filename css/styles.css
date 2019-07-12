@@ -1,5 +1,6 @@
 :root {
     --about-text-color: #0080FF;  
+    --works-text-color:#D700FF;
   }
 body{
     margin: 0;
@@ -197,6 +198,10 @@ nav{
     font-weight: 300;
     color: #707070;
 }
+section{
+    width: 100%;
+    height: 100vh; 
+}
 #about{
     width: 100%;
     height: 85vh;
@@ -205,16 +210,16 @@ nav{
     /* display: none; */
 }
 .about-body{
-    
-    margin: 10rem 25rem 0rem 25rem;
+    margin: 20vh 25vw 0rem 25vw;
     color: black;
     transform: translateX(-1000px);
     display: grid;
     opacity: 0;
-    grid-template-columns: auto;
-    grid-template-rows: 40% 60%;
+    grid-template-columns: minmax(200px,1fr) 2fr;
+    grid-template-rows: 50% 50%;
     grid-template-areas: "pic header"
- "text text";
+    "text text";
+    /* height: 100%; */
 }
 .about-header{
     margin: 0px 0px 0px 20px;
@@ -244,4 +249,29 @@ h2{
 }
 h2,p{
     margin:0
+}
+svg{
+    height: 100%;
+    width: 100%;
+}
+/* work section */
+
+.work-body{
+    color: black;
+    margin: 8em;
+    width: 25vw
+}
+#my-works-container{
+    width: 300px;
+    height: auto;
+    display: grid;
+    grid-template: auto/ 60% auto;
+    
+}
+#brief-case{
+    position: relative;
+    bottom: -63px;
+    left: -50px;
+    height: 50px;
+    width: auto;
 }

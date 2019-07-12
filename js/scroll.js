@@ -1,7 +1,7 @@
 import  jump  from './jump.module.js';
 //global variables
-var o = parseInt($('.about-body').css("margin-top"),10);
-		
+var a = parseInt($('.about-body').css("margin-top"),10);
+var w = parseInt($('.work-body').css("margin-top"),10);
 window.addEventListener('load', (ev)=>{
 	loadingDone();
 	
@@ -18,13 +18,19 @@ document.querySelector(".logo").addEventListener("click",()=>{
 	scrolltoHome();
 })
 document.querySelector("#worksbtn").addEventListener("click",()=>{
-	scrolltoInfo();
+	scrolltoWork();
 })
 function scrolltoInfo(){
-		
+	    a= parseInt($('.about-body').css("margin-top"),10);
 		jump("#about",{
-			offset:-o
+			offset:-a
 		});
+}
+function scrolltoWork(){
+	w = parseInt($('.work-body').css("margin-top"),10);
+	jump("#works",{
+		offset:-w
+	});
 }
 function scrolltoHome(){
 		jump("#header");
@@ -38,23 +44,46 @@ function loadingDone(){
 //end nav
 //About Section///////////////////////////////
 //scrollmagic triggers
-var d = o+150;
+//about section trigger
+var d = 150;
 var i = 0;
 var controller = new ScrollMagic.Controller()
-new ScrollMagic.Scene({triggerElement: "#about",offset:-o+250})
+new ScrollMagic.Scene({triggerElement: "#header",offset:a+250})
+					.addTo(controller)
+					.setTween(TweenMax.to($("li"),0.5, {css:{color:"white"}, ease:Back.easeOut}))
+					//.addIndicators();
+new ScrollMagic.Scene({triggerElement: "#header",offset:	a+250})
+					.addTo(controller)
+					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"white"}, ease:Back.easeOut}))
+
+new ScrollMagic.Scene({triggerElement: "#about",offset:-a+250})
 					.addTo(controller)
 					.setTween(TweenMax.to($("li"),0.5, {css:{color:"#0080FF"}, ease:Back.easeOut}))
 					//.addIndicators();
-new ScrollMagic.Scene({triggerElement: "#about",offset:-o+250})
+new ScrollMagic.Scene({triggerElement: "#about",offset:-a+250})
 					.addTo(controller)
 					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"#0080FF"}, ease:Back.easeOut}))
 					//.addIndicators()
-new ScrollMagic.Scene({triggerElement: "#about",duration:d,offset:-o})
+new ScrollMagic.Scene({triggerElement: "#about",duration:d+a,offset:-a})
 					.addTo(controller)
 				
 					.setTween(TweenMax.to(".about-body", 0.5, {transform: "translateX(0)",opacity:"1"}))
 					//.addIndicators()
-new ScrollMagic.Scene({triggerElement: "#about",offset:-o})
+new ScrollMagic.Scene({triggerElement: "#about",offset:-a})
 					.addTo(controller)
 					.setClassToggle(".about-text", "floatup")
 					//.addIndicators()
+//work section trigger
+new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
+					.addTo(controller)
+					.setTween(TweenMax.to($("li"),0.5, {css:{color:"#D700FF"}, ease:Back.easeOut}))
+					//.addIndicators();
+new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
+					.addTo(controller)
+					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"#D700FF"}, ease:Back.easeOut}))
+
+
+//end of triggers
+
+
+//work section

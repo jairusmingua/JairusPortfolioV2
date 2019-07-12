@@ -121,7 +121,7 @@
     }
     .logo{
         margin: 2rem;
-        width: 200px;
+        width: 100px;
         height:auto
     }
     .divider{
@@ -157,5 +157,30 @@
         font-size: 100px;
         letter-spacing: 0px;
         font-weight: 900;
+    }
+    .profilepic{
+        height: auto;
+        width: 50vw;
+    }
+    /* work body */
+    .work-body {
+        color: black;
+        margin: 10vh 20vw 10vh 20vw;
+        width: 50vw;
+    }
+    #brief-case{
+        position: relative;
+        bottom: -165px;
+        left: -60px;
+        height: 50px;
+        width: auto;
+    }
+
+    #my-works-container {
+        width: 300px;
+        height: auto;
+        display: grid;
+        /* width: 20em; */
+        grid-template: auto/ 380px 20%;
     }
 }
