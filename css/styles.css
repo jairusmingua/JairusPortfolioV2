@@ -1,9 +1,12 @@
+:root {
+    --about-text-color: #0080FF;  
+  }
 body{
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
     color: white;
-    background: black;
+    background: white;
 }
 ul{
   
@@ -56,6 +59,9 @@ lottie-player{
 lottie-player.done{
     animation: fade 1s forwards;
 }
+.logo_svg{
+    fill:white;
+}
 .loading{
     position: fixed;
     width: 100%;
@@ -70,16 +76,21 @@ lottie-player.done{
     animation: fade 1s forwards;
 }
 @keyframes fade{
-    from{opacity: 1}
-    to{opacity: 0;
+    50%{opacity: 1}
+    100%{opacity: 0;
     display: none;z-index: -1;}
+}
+@keyframes moveup{
+    from{opacity: 0}
+    to{opacity: 1;
+    transform: translateY(0)}
 }
 #header{
 
     padding: 9rem 0rem 0rem 0rem;
     width: 100%;
     height: 80vh;
-    background-image: linear-gradient(to bottom,#807CF8,#403E7C);
+    background-image: linear-gradient(to bottom,#6CAFFB,#807CF8);
     /* background: #F87C7C; */
     display: inline-table;
 }.logo{
@@ -112,7 +123,7 @@ lottie-player.done{
 a{
     text-emphasis: none;
     text-decoration: none;
-    color: white;
+   
 }
 li{
     float: left;
@@ -123,7 +134,7 @@ nav{
     display: flex;
     top: 0;
     padding: 1em 1em 0em 1em;
-    
+    transition: 1s;
     position: fixed;
     height: 6rem;
     width: 150%;
@@ -189,17 +200,46 @@ nav{
 #about{
     width: 100%;
     height: 85vh;
-    background: black;
+    background: white;
     
     /* display: none; */
 }
 .about-body{
-    margin: 10rem 10rem 0rem 10rem;
+    
+    margin: 10rem 25rem 0rem 25rem;
+    color: black;
+    transform: translateX(-1000px);
+    display: grid;
+    opacity: 0;
+    grid-template-columns: auto;
+    grid-template-rows: 40% 60%;
+    grid-template-areas: "pic header"
+ "text text";
+}
+.about-header{
+    margin: 0px 0px 0px 20px;
+    vertical-align: 50%;
+    grid-area: header
+}
+.about-pic{
+    grid-area: pic
+}
+.about-text{
+    color: #656565;
+    text-align: center;
+    grid-area: text;
+    transform: translateY(300px);
+    opacity: 0;
+    overflow: hidden;
+}
+.about-text.floatup{
+    animation: moveup 2s forwards;
 }
 h2{
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Lato', 'sans-serif';
     font-size: 50px;
-    letter-spacing: 3px;
+    letter-spacing:0px;
+    font-weight: 900;
 
 }
 h2,p{
