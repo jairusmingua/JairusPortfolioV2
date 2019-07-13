@@ -258,7 +258,7 @@ svg{
 
 .work-body{
     color: black;
-    margin: 8em 15em 8em 15em;
+    margin: 8em 10vw 8em 10vw;
     /* width: 100%; */
     display: grid;
     grid-template: "container graph";
