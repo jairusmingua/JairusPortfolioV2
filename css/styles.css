@@ -258,18 +258,21 @@ svg{
 
 .work-body{
     color: black;
-    margin: 8em;
-    width: 100%;
+    margin: 8em 15em 8em 15em;
+    /* width: 100%; */
     display: grid;
     grid-template: "container graph";
+    grid-template-columns:minmax(300px, 60%) auto;
 }
 #my-works-container{
-    width: 300px;
+    width: 100%;
     height: auto;
     display: grid;
-    grid-template: minmax(130px,50%) minmax(100px,50%) / 60% auto;
+    grid-template: minmax(130px,20%) minmax(100px,80%) / 60% auto;
     grid-area: container;
+    font-weight: 700;
 }
+
 #brief-case{
     position: relative;
     bottom: -63px;
@@ -278,7 +281,7 @@ svg{
     width: auto;
 }
 #my-works-graph-container{
-    height: 50vh;
+    
     width: 50vw;
     display: grid;
     grid-template: 40vh 40vh /1fr 1fr;
@@ -292,6 +295,12 @@ svg{
     text-align: center;
     font-size: 20px;
     font-weight: 900;
+}
+.box{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 1s;
 }
 .chart canvas{
     position: relative;

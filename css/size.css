@@ -13,9 +13,16 @@
     }
     .work-body{
         color: black;
-        margin: 8em;
-        width: 25vw;
+        margin: 8em 4em 8em 4em;
+        
         display: block;
+    }
+    #my-works-graph-container {
+        width: auto;
+        
+    }
+    .about-body{
+        margin: 20vh 10vw 0rem 10vw;
     }
   }
   @media only screen and (max-width: 500px) {
@@ -182,18 +189,42 @@
         height: 50px;
         width: auto;
     }
-
+    #my-works-graph-container{
+        width: auto;
+        display: grid;
+        grid-template: minmax(400px,1fr) /1fr 1fr;
+        grid-area: graph;
+    }
     #my-works-container {
-        width: 300px;
+        width: 100%;
         height: auto;
         display: grid;
         /* width: 20em; */
-        grid-template: auto/ 380px 20%;
+        grid-template: minmax(300px,80%) auto/ 90% auto;
     }
     .work-body{
         grid-template-rows: minmax(300px,50vh) 50vh;
         display: grid;
         grid-template: "container" 
-                        "graph"
+                        "graph";
+        grid-gap: 4vh;
+        margin: 10vh 10vw 10vh 10vw;
+        width: auto;
+    }
+    #brief-case{
+        position: relative;
+    bottom: -35px;
+    /* left: -60px; */
+    height: 100%;
+    width: auto;
+    }
+    .chart{
+        position: relative;
+        width: 58%;
+        height: max-content;
+        margin: 0 auto;
+        text-align: center;
+        font-weight: 900;
+        font-size: 1em;
     }
 }

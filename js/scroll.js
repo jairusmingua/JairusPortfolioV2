@@ -28,7 +28,7 @@ function scrolltoInfo(){
 		});
 }
 function scrolltoWork(){
-	loadChart();
+	
 	w = parseInt($('.work-body').css("margin-top"),10);
 	jump("#works",{
 		offset:-w
@@ -38,7 +38,7 @@ function scrolltoHome(){
 		jump("#header");
 }
 function loadingDone(){
-	console.log("done");
+	// console.log("done");
 	document.querySelector(".loading").classList.toggle("done");
 	document.querySelector("#logoloading").classList.toggle("done");
 	jump("#header");
@@ -86,7 +86,7 @@ new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
 new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
 					.addTo(controller)
 					.on("enter leave", function (e) {
-						playchart();
+						loadChart();
 					})
 				//	.addIndicators()
 
