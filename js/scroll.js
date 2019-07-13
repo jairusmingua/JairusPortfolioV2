@@ -104,6 +104,8 @@ function loadChart(){
 			size:300
 		});
 	});
+	$('canvas').css("height","");
+	$('canvas').css("width","");
 }
 function playchart(){
 	$('.chart').data('easyPieChart').enableAnimation();
