@@ -302,6 +302,10 @@ svg{
     font-size: 1em;
     transition: 1s;
 }
+canvas{
+    height: 100%;
+    width: 100%;
+}
 .chart canvas{
     position: relative;
     /* top: -45px; */
