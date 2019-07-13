@@ -1,4 +1,5 @@
 import  jump  from './jump.module.js';
+
 //global variables
 var a = parseInt($('.about-body').css("margin-top"),10);
 var w = parseInt($('.work-body').css("margin-top"),10);
@@ -27,6 +28,7 @@ function scrolltoInfo(){
 		});
 }
 function scrolltoWork(){
+	loadChart();
 	w = parseInt($('.work-body').css("margin-top"),10);
 	jump("#works",{
 		offset:-w
@@ -81,9 +83,29 @@ new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
 new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
 					.addTo(controller)
 					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"#D700FF"}, ease:Back.easeOut}))
-
+new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
+					.addTo(controller)
+					.on("enter leave", function (e) {
+						playchart();
+					})
+				//	.addIndicators()
 
 //end of triggers
 
 
 //work section
+function loadChart(){
+	$(function() {
+		$('.chart').easyPieChart({
+			barColor:"#D700FF",
+			scaleColor:false,
+			scaleLength:0,
+			lineWidth:50,
+			size:300
+		});
+	});
+}
+function playchart(){
+	$('.chart').data('easyPieChart').enableAnimation();
+}
+
