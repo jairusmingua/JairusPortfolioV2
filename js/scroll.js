@@ -103,9 +103,10 @@ function loadChart(){
 			lineWidth:50,
 			size:300
 		});
+		$('canvas').css("height","100%");
+		$('canvas').css("width","100%");
 	});
-	$('canvas').css("height","");
-	$('canvas').css("width","");
+	
 }
 function playchart(){
 	$('.chart').data('easyPieChart').enableAnimation();
