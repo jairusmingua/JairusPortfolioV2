@@ -215,7 +215,7 @@ section{
     transform: translateX(-1000px);
     display: grid;
     opacity: 0;
-    grid-template-columns: minmax(200px,1fr) 2fr;
+    grid-template-columns: minmax(100px,1fr) 2fr;
     grid-template-rows: 50% 50%;
     grid-template-areas: "pic header"
     "text text";
