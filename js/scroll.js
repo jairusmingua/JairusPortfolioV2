@@ -79,7 +79,7 @@ new ScrollMagic.Scene({triggerElement: "#about",offset:-a})
 new ScrollMagic.Scene({triggerElement: "#skill",offset:-w+100})
 					.addTo(controller)
 					.setTween(TweenMax.to($("li"),0.5, {css:{color:"#D700FF"}, ease:Back.easeOut}))
-					.addIndicators();
+					//.addIndicators();
 new ScrollMagic.Scene({triggerElement: "#skill",offset:-w+100})
 					.addTo(controller)
 					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"#D700FF"}, ease:Back.easeOut}))
