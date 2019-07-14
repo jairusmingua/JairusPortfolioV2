@@ -1,15 +1,14 @@
-
-             INCLUDE 'mc9s12c32.inc'
-
+  INCLUDE 'mc9s12c32.inc'
+ 
 ; export symbols
             XDEF Entry, main
             ; we use export 'Entry' as symbol. This allows us to
             ; reference 'Entry' either in the linker .prm file
             ; or from C/C++ later on
-
+ 
             XREF __SEG_END_SSTACK      ; symbol defined by the linker for the end of the stack
-
-
+ 
+ 
             XDEF Entry, _Startup, main
             ; we use export 'Entry' as symbol. This allows us to
             ; reference 'Entry' either in the linker .prm file
@@ -21,7 +20,7 @@ main:
 _Startup:
 Entry:
    lds #__SEG_END_SSTACK
-   BIT0: EQU %00000001                         
+   BIT0: EQU %00000001                        
    BIT1: EQU %00000010
    BIT2: EQU %00000100
    BIT3: EQU %00001000
@@ -33,7 +32,7 @@ Entry:
    bset DDRB,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
    bset DDRA,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
    ;uppercase
-   LIGHTA: EQU %00001000
+   LIGHTA: EQU %11110111
    LIGHTB: EQU %00000011
    LIGHTC: EQU %01000110
    LIGHTD: EQU %00100001
@@ -42,60 +41,94 @@ Entry:
    LIGHTb: EQU %00000000
    LIGHTc: EQU %00100111
    LIGHTd: EQU %01000000
+   
    LIGHTDash: EQU %0111111
-   LIGHTTie: EQU %0000111
+   LIGHTTie: EQU %1111000
    LIGHTWinner: EQU %1010101
    LIGHTLoser: EQU %1000111
    main_loop:
       ;ifLightA:
-      bclr ATDDIEN,BIT1|BIT2|BIT3|BIT4|BIT6|BIT7
+      ;bclr ATDDIEN,BIT1|BIT2|BIT3|BIT4|BIT6|BIT7
+     
       brset PORTAD0,BIT2|BIT3|BIT4|BIT5|BIT6|BIT7,tie
-      
+     
       brset PORTAD0,BIT0|BIT1|BIT4|BIT5|BIT6|BIT7,tie
-                                
+                               
       brset PORTAD0,BIT0|BIT1|BIT2|BIT3|BIT6|BIT7,tie
-      ;ROCK1 VS 
+      ;ROCK1 VS
       brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p2winner ;Rock 1 vs Paper 2
       brset PORTAD0,BIT1|BIT2|BIT3|BIT4|BIT6|BIT7,p1winner ;Rock 1 vs Scissor2
       ;PAPER1 vs
       brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p1winner ;Paper 1 vs Rock 2
-      brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p2winner ;Paper 1 vs Scissor2 
+      brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p2winner ;Paper 1 vs Scissor2
       ;SCISSOR1 VS
       brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p1winner ;Scissor 1 vs Paper2
       brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p2winner ;Scissor 1 vs Rock 2
-      
-      lbra standby
-      
-      p2winner:
-      
-      
-      
-      
-      
-      p1winner:
-      
-      
-      
-      
-      
      
-      
-   
-      
-      standby:
-      brset PTAD,BIT6,goto_main
-      
+      brset PORTAD0,BIT0|BIT4|BIT5|BIT6|BIT7,p2winner   ;;;sample
       lbra main_loop
+     
+      p2winner:
+     
+      inc PORTB  
+     
+      lbra standby
+     
+     
+     
+     
+     
+      p1winner:
+     
+      inc PORTB
+      lbra standby
+     
+     
+     
+     
+     
+     
+   
+     
+      standby:.
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+      brset PTAD,BIT6,goto_main
+      lbra standby
+     
       goto_main:
       lbra main_loop
-      
+     
       tie:
-      ;iftie:
-      
-      bset PORTB,LIGHTTie     
-      bset PORTA,LIGHTTie
-      lbra standby
-      
+   
+      lbra main_loop
+     
       shortDelay:
         ldx $ff
       shortDelay2:

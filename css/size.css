@@ -11,13 +11,13 @@
     .bubble{
         padding-bottom: 1rem;
     }
-    .work-body{
-        color: black;
-        margin: 8em 4em 8em 4em;
+    .skill-body{
+        color: #707070;
+       
         
         display: block;
     }
-    #my-works-graph-container {
+    #my-skill-graph-container {
         width: auto;
         
     }
@@ -177,10 +177,10 @@
         width: 50vw;
     }
     /* work body */
-    .work-body {
-        color: black;
-        margin: 10vh 20vw 10vh 20vw;
-        width: 50vw;
+    .skill-body {
+        color: #707070;
+       
+        
     }
     #brief-case{
         position: relative;
@@ -189,34 +189,32 @@
         height: 50px;
         width: auto;
     }
-    #my-works-graph-container{
+    #my-skill-graph-container{
         width: auto;
         display: grid;
         grid-template: minmax(400px,1fr) /1fr 1fr;
         grid-area: graph;
     }
-    #my-works-container {
+    #my-skill-container {
         width: 100%;
         height: auto;
-        display: grid;
-        /* width: 20em; */
-        grid-template: minmax(300px,80%) auto/ 90% auto;
+        display: block;
     }
-    .work-body{
+    .skill-body{
         grid-template-rows: minmax(300px,50vh) 50vh;
         display: grid;
         grid-template: "container" 
                         "graph";
         grid-gap: 4vh;
-        margin: 10vh 10vw 10vh 10vw;
+      
         width: auto;
     }
     #brief-case{
         position: relative;
-    bottom: -35px;
-    /* left: -60px; */
-    height: 100%;
-    width: auto;
+        bottom: -22px;
+        left: -3px;
+        height: 2em;
+        width: auto;
     }
     .chart{
         position: relative;

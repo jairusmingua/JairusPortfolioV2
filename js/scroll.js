@@ -2,7 +2,7 @@ import  jump  from './jump.module.js';
 
 //global variables
 var a = parseInt($('.about-body').css("margin-top"),10);
-var w = parseInt($('.work-body').css("margin-top"),10);
+var w = parseInt($('#skill').css("margin-top"),10);
 window.addEventListener('load', (ev)=>{
 	loadingDone();
 	
@@ -19,7 +19,7 @@ document.querySelector(".logo").addEventListener("click",()=>{
 	scrolltoHome();
 })
 document.querySelector("#worksbtn").addEventListener("click",()=>{
-	scrolltoWork();
+	scrolltoskill();
 })
 function scrolltoInfo(){
 	    a= parseInt($('.about-body').css("margin-top"),10);
@@ -27,10 +27,10 @@ function scrolltoInfo(){
 			offset:-a
 		});
 }
-function scrolltoWork(){
+function scrolltoskill(){
 	
-	w = parseInt($('.work-body').css("margin-top"),10);
-	jump("#works",{
+	w = parseInt($('#skill').css("margin-top"),10);
+	jump("#skill",{
 		offset:-w
 	});
 }
@@ -75,15 +75,15 @@ new ScrollMagic.Scene({triggerElement: "#about",offset:-a})
 					.addTo(controller)
 					.setClassToggle(".about-text", "floatup")
 					//.addIndicators()
-//work section trigger
-new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
+//skill section trigger
+new ScrollMagic.Scene({triggerElement: "#skill",offset:-w+100})
 					.addTo(controller)
 					.setTween(TweenMax.to($("li"),0.5, {css:{color:"#D700FF"}, ease:Back.easeOut}))
-					//.addIndicators();
-new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
+					.addIndicators();
+new ScrollMagic.Scene({triggerElement: "#skill",offset:-w+100})
 					.addTo(controller)
 					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"#D700FF"}, ease:Back.easeOut}))
-new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
+new ScrollMagic.Scene({triggerElement: "#skill",offset:-w+100})
 					.addTo(controller)
 					.on("enter leave", function (e) {
 						loadChart();
@@ -93,7 +93,7 @@ new ScrollMagic.Scene({triggerElement: "#works",offset:-w+250})
 //end of triggers
 
 
-//work section
+//skill section
 function loadChart(){
 	$(function() {
 		$('.chart').easyPieChart({
@@ -105,7 +105,9 @@ function loadChart(){
 		});
 		$('canvas').css("height","100%");
 		$('canvas').css("width","100%");
+		$('.chart-description').addClass("show");
 	});
+	
 	
 }
 function playchart(){
