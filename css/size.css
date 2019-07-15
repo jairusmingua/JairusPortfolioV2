@@ -33,10 +33,7 @@
         display: none;
     }
     
-    .divider{
-        margin-top: 2rem;
-        display: none;
-    }
+    
     .bubble-description{
         font-size: 1rem;
         
@@ -138,9 +135,7 @@
         width: 100px;
         height:auto
     }
-    .divider{
-        margin-top: 4.5rem;
-    }
+   
     lottie-player{
         height: 400px;
         width: 400px;
