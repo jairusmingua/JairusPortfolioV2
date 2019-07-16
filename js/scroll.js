@@ -66,6 +66,9 @@ new ScrollMagic.Scene({triggerElement: "#about",offset:-a+250})
 					.addTo(controller)
 					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"#0080FF"}, ease:Back.easeOut}))
 					//.addIndicators()
+new ScrollMagic.Scene({triggerElement: "#about",offset:-a+250})
+					.addTo(controller)
+					.setTween(TweenMax.to($(".burger-line"),0.5, {css:{background:"#0080FF"}, ease:Back.easeOut}))
 new ScrollMagic.Scene({triggerElement: "#about",duration:d+a,offset:-a})
 					.addTo(controller)
 				
@@ -89,6 +92,11 @@ new ScrollMagic.Scene({triggerElement: "#skill",offset:-w+100})
 						loadChart();
 					})
 				//	.addIndicators()
+new ScrollMagic.Scene({triggerElement: "#skill",offset:-w+100})
+					.addTo(controller)
+					.setTween(TweenMax.to($(".burger-line"),0.5, {css:{background:"#D700FF"}, ease:Back.easeOut}))
+				
+				
 
 //end of triggers
 

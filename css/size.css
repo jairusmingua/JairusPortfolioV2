@@ -57,6 +57,25 @@
       }
       
   }
+  @media only screen and (max-device-width: 640px){
+    .about-body{
+        margin: 10vh 25vw 0rem 25vw;
+    }
+    li{
+        display: none;
+    }
+    #header{
+        padding:6rem 0rem 0rem 0rem;
+    }
+    .burger-line{
+        height: 3px;
+        width: 3vw;
+    }
+    .chart-text{
+        top: 32%;
+    }
+    
+}
 
   @media only screen and (max-device-width: 480px) {
     body{
@@ -141,7 +160,7 @@
         width: 400px;
     }
     #about{
-        height: 91vh;
+        height: 69vh;
         font-size: 2em;
     }
     .about-body{
@@ -219,5 +238,9 @@
         text-align: center;
         font-weight: 900;
         font-size: 1em;
+    }
+    .app-logo{
+        height: 50px;
+        
     }
 }

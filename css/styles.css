@@ -44,6 +44,21 @@ img{
     height: 100%;
     width: 100%;
 }
+.burger{
+    height: fit-content;
+    width: auto;
+    display: inline-block;
+    position: absolute;
+    left: 90vw;
+    top: 5vh;
+}
+.burger-line{
+    width: 50px;
+    height: 8px;
+    margin:10px 0px 10px 0px;
+    background: white;
+    
+}
 /* .slidedown{
     position: inherit;
   
@@ -111,7 +126,7 @@ lottie-player.done{
 
 .divider{
     
-    height: 32vh;
+    height: 20vh;
     margin:1em 0em 1em 0em;
 
 }
@@ -327,7 +342,23 @@ svg{
     text-align: center;
     font-weight: 700;
     font-size: 1em;
-    
+    display: grid;
+    grid-template-columns: 30% auto;
+    grid-template: "main side";
+}
+.box-main{
+    grid-area: main
+}
+.box-side{
+    grid-area: side;
+    display: block;
+}
+.app-item{
+    margin:5px 0px 5px 0px;
+}
+.app-logo{
+    height: 25px;
+    width: auto;
 }
 canvas{
     height: 100%;
