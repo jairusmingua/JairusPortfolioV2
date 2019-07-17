@@ -12,6 +12,13 @@ window.addEventListener('load', (ev)=>{
 });
 //homepage listener
 //nav
+document.querySelector("body").addEventListener("click",()=>{
+	if($(".burger").css("display")=="block"&&burgerOpen){
+		document.querySelector("ul").classList.toggle("expand");	
+		burgerOpen = false;
+	
+	}
+})
 document.querySelector("#scrolltoinfo").addEventListener("click",()=>{
 	scrolltoInfo();
 })
@@ -26,7 +33,7 @@ document.querySelector("#worksbtn").addEventListener("click",()=>{
 	if($(".burger").css("display")=="block"&&burgerOpen){
 		document.querySelector("ul").classList.toggle("expand");	
 		burgerOpen = false;
-		console.log("closing");
+		
 	}
 
 })
