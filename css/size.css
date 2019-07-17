@@ -24,14 +24,31 @@
     .about-body{
         margin: 20vh 10vw 0rem 10vw;
     }
+    .burger{
+        display: inline-block;
+
+    }
+    ul{
+        display: grid;
+        height: 0;
+        width: max-content;
+        position: absolute;
+        right: 38%;
+        top: 40%;
+        overflow: hidden;
+        background: #707070;
+        border-radius: 0.3rem;
+        transition: 400ms ease-in-out;
+    }
+    ul.expand{
+        height: 20vh;
+    }
   }
   @media only screen and (max-width: 500px) {
     .body {
       display: block
     }
-    ul{
-        display: none;
-    }
+    
     
     
     .bubble-description{
@@ -61,16 +78,11 @@
     .about-body{
         margin: 10vh 25vw 0rem 25vw;
     }
-    li{
-        display: none;
-    }
+    
     #header{
         padding:6rem 0rem 0rem 0rem;
     }
-    .burger-line{
-        height: 3px;
-        width: 3vw;
-    }
+
     .chart-text{
         top: 32%;
     }
@@ -144,10 +156,6 @@
     height: 10rem;
     width: 150%;
     /* background-image: linear-gradient(to bottom,#F87C7C, rgba(255,0,0,0)); */
-    }
-    ul{
-        display: none;
-        
     }
     .logo{
         margin: 2rem;
@@ -242,5 +250,36 @@
     .app-logo{
         height: 50px;
         
+    }
+    .burger{
+        height: fit-content;
+        width: auto;
+        display: inline-block;
+        position: absolute;
+        left: 90vw;
+        top: 5vh;
+        cursor: pointer;
+    }
+    .burger-line {
+        width: 1.5em;
+        height: 0.2em;
+        margin: 5px 0px 5px 0px;
+        background: white;
+    }
+    ul{
+        display: grid;
+        height: 0;
+        width: max-content;
+        position: absolute;
+        right: 38%;
+        top: 70%;
+        overflow: hidden;
+        background: #707070;
+        border-radius: 0.3rem;
+        transition: 400ms ease-in-out;
+        font-size: 1em;
+    }
+    ul.expand{
+        height: 20vh;
     }
 }

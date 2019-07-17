@@ -1,6 +1,9 @@
 import  jump  from './jump.module.js';
 
 //global variables
+var burgerActive = false;
+var burgerOpen = false;
+var h = parseInt($('#header').css("height"),10);
 var a = parseInt($('.about-body').css("margin-top"),10);
 var w = parseInt($('#skill').css("margin-top"),10);
 window.addEventListener('load', (ev)=>{
@@ -20,6 +23,18 @@ document.querySelector(".logo").addEventListener("click",()=>{
 })
 document.querySelector("#worksbtn").addEventListener("click",()=>{
 	scrolltoskill();
+	if($(".burger").css("display")=="block"&&burgerOpen){
+		document.querySelector("ul").classList.toggle("expand");	
+		burgerOpen = false;
+		console.log("closing");
+	}
+
+})
+document.querySelector(".burger").addEventListener("click",()=>{
+	document.querySelector("ul").classList.toggle("expand");
+	if($(".burger").css("display")=="block"){
+		burgerOpen = true;
+	}
 })
 function scrolltoInfo(){
 	    a= parseInt($('.about-body').css("margin-top"),10);
@@ -43,6 +58,7 @@ function loadingDone(){
 	document.querySelector("#logoloading").classList.toggle("done");
 	jump("#header");
 }
+
 //end nav
 //About Section///////////////////////////////
 //scrollmagic triggers
@@ -50,14 +66,14 @@ function loadingDone(){
 var d = 150;
 var i = 0;
 var controller = new ScrollMagic.Controller()
-new ScrollMagic.Scene({triggerElement: "#header",offset:a+250})
+new ScrollMagic.Scene({triggerElement: "#header",offset:h+250})
 					.addTo(controller)
-					.setTween(TweenMax.to($("li"),0.5, {css:{color:"white"}, ease:Back.easeOut}))
-					//.addIndicators();
-new ScrollMagic.Scene({triggerElement: "#header",offset:	a+250})
+					.setTween(TweenMax.to($("li"),0.5, {css:{color:"#FFFFFF"}, ease:Back.easeOut}))
+					
+new ScrollMagic.Scene({triggerElement: "#header",offset:h+250})
 					.addTo(controller)
-					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"white"}, ease:Back.easeOut}))
-
+					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"#FFFFFF"}, ease:Back.easeOut}))
+					
 new ScrollMagic.Scene({triggerElement: "#about",offset:-a+250})
 					.addTo(controller)
 					.setTween(TweenMax.to($("li"),0.5, {css:{color:"#0080FF"}, ease:Back.easeOut}))

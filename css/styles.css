@@ -47,16 +47,19 @@ img{
 .burger{
     height: fit-content;
     width: auto;
-    display: inline-block;
+    display: none;
     position: absolute;
     left: 90vw;
     top: 5vh;
+    cursor: pointer;
+    
 }
 .burger-line{
-    width: 50px;
-    height: 8px;
-    margin:10px 0px 10px 0px;
+    width: 1.5em;
+    height: 0.2em;
+    margin: 5px 0px 5px 0px;
     background: white;
+    
     
 }
 /* .slidedown{
