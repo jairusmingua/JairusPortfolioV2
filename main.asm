@@ -31,24 +31,21 @@ Entry:
    bset ATDDIEN,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
    bset DDRB,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
    bset DDRA,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
-   ;uppercase
-   LIGHTA: EQU %11110111
-   LIGHTB: EQU %00000011
-   LIGHTC: EQU %01000110
-   LIGHTD: EQU %00100001
-   ;lowercase
-   LIGHTa: EQU %00100000
-   LIGHTb: EQU %00000000
-   LIGHTc: EQU %00100111
-   LIGHTd: EQU %01000000
    
-   LIGHTDash: EQU %0111111
-   LIGHTTie: EQU %1111000
-   LIGHTWinner: EQU %1010101
-   LIGHTLoser: EQU %1000111
+   ;timer
+   ;TCNT: EQU $0044 ; Timer counter register
+;   TSCR1: EQU $0046 ;Timer system control register 1
+   TEN: EQU %10000000; Timer enable
+;   TFLG2: EQU $004F ;Timer interrupt flag resgister 2
+   TOF: EQU %10000000; Timer overflowflag
+   DELAY: EQU 100
+   MAXSCORE: EQU 3
+   bset TSCR1,TEN
+   ldaa #TOF
+   staa TFLG2
    main_loop:
       ;ifLightA:
-      ;bclr ATDDIEN,BIT1|BIT2|BIT3|BIT4|BIT6|BIT7
+      ;bclr ATDDIEN,BIT0|BIT3|BIT4|BIT5|BIT6|BIT7
      
       brset PORTAD0,BIT2|BIT3|BIT4|BIT5|BIT6|BIT7,tie
      
@@ -69,10 +66,12 @@ Entry:
       lbra main_loop
      
       p2winner:
-     
-      inc PORTB  
-     
-      lbra standby
+      
+      inc PORTB
+      brset PORTB,#MAXSCORE,resetGame  
+      ;ldx #DELAY
+      ;jsr shortDelay
+      lbra tie
      
      
      
@@ -80,8 +79,10 @@ Entry:
      
       p1winner:
      
-      inc PORTB
-      lbra standby
+      inc PORTA
+      brset PORTB,#MAXSCORE,resetGame
+      ;ldx #DELAY
+      ;jsr shortDelay
      
      
      
@@ -90,51 +91,37 @@ Entry:
      
    
      
-      standby:.
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-      brset PTAD,BIT6,goto_main
+      standby:
+      
+      brset PORTAD0,BIT0|BIT4|BIT5|BIT6|BIT7,goto_main
       lbra standby
-     
+      resetGame:
+      brset PORTAD0,BIT1|BIT4|BIT5|BIT6|BIT7,reset
+      lbra resetGame
+      reset:
+      clr PORTA
+      clr PORTB
       goto_main:
+      ldx #DELAY
+      jsr shortDelay
       lbra main_loop
      
       tie:
-   
-      lbra main_loop
+      lbra standby
+      
      
-      shortDelay:
-        ldx $ff
-      shortDelay2:
-        nop
-        dex
-        cpx #0
-        bhi shortDelay2
-        rtc
+ MySub: SECTION
+  shortDelay:
+        psha
+        pshx
+        spin:
+            tst TFLG2
+            bpl spin
+            ldaa #TOF
+            staa TFLG2
+            dex
+            bne spin
+            pulx
+            pula
+            rts
 ;*****************END***************;
