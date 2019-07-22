@@ -1,4 +1,6 @@
-  INCLUDE 'mc9s12c32.inc'
+         INCLUDE 'mc9s12c32.inc'
+
+
  
 ; export symbols
             XDEF Entry, main
@@ -45,24 +47,34 @@ Entry:
    staa TFLG2
    main_loop:
       ;ifLightA:
-      ;bclr ATDDIEN,BIT0|BIT3|BIT4|BIT5|BIT6|BIT7
+      ;bclr ATDDIEN,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
      
-      brset PORTAD0,BIT2|BIT3|BIT4|BIT5|BIT6|BIT7,tie
+      ;brset PORTAD0,BIT2|BIT3|BIT4|BIT5|BIT6|BIT7,tie
      
-      brset PORTAD0,BIT0|BIT1|BIT4|BIT5|BIT6|BIT7,tie
+      ;brset PORTAD0,BIT0|BIT1|BIT4|BIT5|BIT6|BIT7,tie
                                
-      brset PORTAD0,BIT0|BIT1|BIT2|BIT3|BIT6|BIT7,tie
+      ;brset PORTAD0,BIT0|BIT1|BIT2|BIT3|BIT6|BIT7,tie
       ;ROCK1 VS
-      brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p2winner ;Rock 1 vs Paper 2
-      brset PORTAD0,BIT1|BIT2|BIT3|BIT4|BIT6|BIT7,p1winner ;Rock 1 vs Scissor2
-      ;PAPER1 vs
-      brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p1winner ;Paper 1 vs Rock 2
-      brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p2winner ;Paper 1 vs Scissor2
-      ;SCISSOR1 VS
-      brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p1winner ;Scissor 1 vs Paper2
-      brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p2winner ;Scissor 1 vs Rock 2
      
-      brset PORTAD0,BIT0|BIT4|BIT5|BIT6|BIT7,p2winner   ;;;sample
+      ;brset PTAD,BIT1|BIT2|BIT3|BIT4|BIT6|BIT7,p1winner ;Rock 1 vs Scissor2
+      ;PAPER1 vs
+      ;brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p1winner ;Paper 1 vs Rock 2
+      ;brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p2winner ;Paper 1 vs Scissor2
+      ;SCISSOR1 VS
+      ;brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p1winner ;Scissor 1 vs Paper2
+      ;brset PTAD,181,p2winner ;Scissor 1 vs Rock 2
+     
+      brset PORTAD0,29,p1winner   ;Rock2 vs sci1
+;      brset PTAD,
+
+
+
+
+
+
+
+      brset PTAD,186,p2winner ;Rock 1 vs Paper 2
+       ;Rock 1 vs Scissor 2
       lbra main_loop
      
       p2winner:
@@ -71,8 +83,8 @@ Entry:
       brset PORTB,#MAXSCORE,resetGame  
       ;ldx #DELAY
       ;jsr shortDelay
-      lbra tie
-     
+      ;lbra tie
+      lbra standby
      
      
      
@@ -83,7 +95,7 @@ Entry:
       brset PORTB,#MAXSCORE,resetGame
       ;ldx #DELAY
       ;jsr shortDelay
-     
+      lbra standby
      
      
      
@@ -93,7 +105,7 @@ Entry:
      
       standby:
       
-      brset PORTAD0,BIT0|BIT4|BIT5|BIT6|BIT7,goto_main
+      brset PTAD,BIT7,goto_main
       lbra standby
       resetGame:
       brset PORTAD0,BIT1|BIT4|BIT5|BIT6|BIT7,reset
