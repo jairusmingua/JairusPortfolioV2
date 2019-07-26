@@ -1,4 +1,5 @@
          INCLUDE 'mc9s12c32.inc'
+         INCLUDE 'bits.inc'
 
 
  
@@ -22,61 +23,63 @@ main:
 _Startup:
 Entry:
    lds #__SEG_END_SSTACK
-   BIT0: EQU %00000001                        
-   BIT1: EQU %00000010
-   BIT2: EQU %00000100
-   BIT3: EQU %00001000
-   BIT4: EQU %00010000
-   BIT5: EQU %00100000
-   BIT6: EQU %01000000
-   BIT7: EQU %10000000
-   bset ATDDIEN,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
+   bset ATDDIEN,BIT0|BIT1|BIT2|BIT3
+   bset PTT,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
+   bclr DDRAD,BIT4|BIT5|BIT6|BIT7
    bset DDRB,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
    bset DDRA,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
-   
-   ;timer
-   ;TCNT: EQU $0044 ; Timer counter register
-;   TSCR1: EQU $0046 ;Timer system control register 1
    TEN: EQU %10000000; Timer enable
-;   TFLG2: EQU $004F ;Timer interrupt flag resgister 2
    TOF: EQU %10000000; Timer overflowflag
    DELAY: EQU 100
-   MAXSCORE: EQU 3
+   MAXSCORE: EQU 4
    bset TSCR1,TEN
    ldaa #TOF
    staa TFLG2
    main_loop:
-      ;ifLightA:
-      ;bclr ATDDIEN,BIT0|BIT1|BIT2|BIT3|BIT4|BIT5|BIT6|BIT7
-     
-      ;brset PORTAD0,BIT2|BIT3|BIT4|BIT5|BIT6|BIT7,tie
-     
-      ;brset PORTAD0,BIT0|BIT1|BIT4|BIT5|BIT6|BIT7,tie
-                               
-      ;brset PORTAD0,BIT0|BIT1|BIT2|BIT3|BIT6|BIT7,tie
-      ;ROCK1 VS
-     
-      ;brset PTAD,BIT1|BIT2|BIT3|BIT4|BIT6|BIT7,p1winner ;Rock 1 vs Scissor2
-      ;PAPER1 vs
-      ;brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p1winner ;Paper 1 vs Rock 2
-      ;brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p2winner ;Paper 1 vs Scissor2
-      ;SCISSOR1 VS
-      ;brset PORTAD0,BIT1|BIT3|BIT4|BIT5|BIT6|BIT7,p1winner ;Scissor 1 vs Paper2
-      ;brset PTAD,181,p2winner ;Scissor 1 vs Rock 2
-     
-      brset PORTAD0,29,p1winner   ;Rock2 vs sci1
-;      brset PTAD,
-
-
-
-
-
-
-
-      brset PTAD,186,p2winner ;Rock 1 vs Paper 2
-       ;Rock 1 vs Scissor 2
+      
+         
+      
+      brset PTAD,BIT0,paper
+      rvr:
+      brset PTT,128,rvp
+      lbra main_loop
+      rvp:
+      brset PTT,210,rvs
+      lbra p2winner
+      rvs:
+      
+      lbra p1winner
+      
+      rout:
       lbra main_loop
      
+      paper:
+      brset PTAD,BIT1,scissor
+      pvr:
+      brset PTT,128,pvs
+      lbra p1winner
+      pvp:
+      brset PTT,210,pvp
+      lbra main_loop
+      pvs:
+      lbra p2winner
+      pout:
+      lbra main_loop
+      
+      scissor:
+      brset PTAD,BIT2,main_loop
+      svr:
+      brset PTT,128,svp
+      lbra p2winner
+      svp:
+      brset PTT,210,svs
+      lbra p1winner
+      svs:
+      lbra main_loop
+      
+      
+                            
+      
       p2winner:
       
       inc PORTB
@@ -105,7 +108,7 @@ Entry:
      
       standby:
       
-      brset PTAD,BIT7,goto_main
+      brset PTAD,BIT4,goto_main         
       lbra standby
       resetGame:
       brset PORTAD0,BIT1|BIT4|BIT5|BIT6|BIT7,reset
