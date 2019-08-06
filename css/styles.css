@@ -1,6 +1,7 @@
 :root {
     --about-text-color: #0080FF;  
     --skill-text-color:#D700FF;
+    --works-text-color:#77E541;
   }
 body{
     margin: 0;
@@ -276,11 +277,11 @@ svg{
     height: 100%;
     
 }
-/* work section */
+/* skill section */
 #skill{
     margin-top:8em;
 }
-.skill-container{
+.skill-container,.works-container{
     margin: 0em 10vw 8em 10vw;
 }
 .skill-body{
@@ -376,4 +377,37 @@ canvas{
     height: 100%;
     width: 100%;
    
+}
+/* work section */
+#works{
+    margin-top: 8em;
+}
+.works-body{
+
+    color: #707070;
+    /* margin: 8em 10vw 8em 10vw; */
+    /* width: 100%; */
+    display: grid;
+    grid-gap: 2vw;
+    grid-template: "container graph";
+    grid-template-columns: auto minmax(100px, 40%);
+}
+.gallery{
+    height: 70vh;
+    width: 100%;
+    background:black;
+}
+.button{
+    margin: 2em 0em 2em 0em;
+    height: 3em;
+    display: flex;
+    color: white;
+    font-weight: 700;
+    border-radius: 100px;
+    padding: 0px 20px 0px 20px;
+    max-width: 20vw;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: -1px 2px 5px grey;
+    background: linear-gradient(to left, #00C2FF, #C45BD8 )
 }
