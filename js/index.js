@@ -46,3 +46,4 @@ workgraphicsbtn.addEventListener("click",()=>{
         document.querySelector(".gallery").appendChild(root);
     })
 })
+workprogbtn.click();
