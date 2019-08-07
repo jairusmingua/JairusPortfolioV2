@@ -145,21 +145,16 @@ function playchart(){
 	$('.chart').data('easyPieChart').enableAnimation();
 }
 //work triggers
-// new ScrollMagic.Scene({triggerElement: "#works",offset:-w+100})
-// 					.addTo(controller)
-// 					.setTween(TweenMax.to($("li"),0.5, {css:{color:"#D700FF"}, ease:Back.easeOut}))
-// 					//j.addIndicators();
-// new ScrollMagic.Scene({triggerElement: "#works",offset:-w+100})
-// 					.addTo(controller)
-// 					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"#D700FF"}, ease:Back.easeOut}))
-// new ScrollMagic.Scene({triggerElement: "#works",offset:-w+100})
-// 					.addTo(controller)
-// 					.on("enter leave", function (e) {
-// 						loadChart();
-// 					})
-// 				//	.addIndicators()
-// new ScrollMagic.Scene({triggerElement: "#works",offset:-w+100})
-// 					.addTo(controller)
-// 					.setTween(TweenMax.to($(".burger-line"),0.5, {css:{background:"#D700FF"}, ease:Back.easeOut}))
+new ScrollMagic.Scene({triggerElement: "#works",offset:-w+100})
+					.addTo(controller)
+					.setTween(TweenMax.to($("li"),0.5, {css:{color:"#77E541"}, ease:Back.easeOut}))
+					//.addIndicators();
+new ScrollMagic.Scene({triggerElement: "#works",offset:-w+100})
+					.addTo(controller)
+					.setTween(TweenMax.to($(".logo_svg"),0.5, {css:{fill:"#77E541"}, ease:Back.easeOut}))
+					//.addIndicators()
+new ScrollMagic.Scene({triggerElement: "#works",offset:-w+100})
+					.addTo(controller)
+					.setTween(TweenMax.to($(".burger-line"),0.5, {css:{background:"#77E541"}, ease:Back.easeOut}))
 
 //end work triggers

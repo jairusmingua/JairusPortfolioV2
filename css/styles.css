@@ -433,6 +433,9 @@ canvas{
     font-weight: 700;
     font-size: 2rem;
 }
+.repo-description{
+    font-size: 1rem;
+}
 .button{
     margin: 2em 0em 2em 0em;
     height: 3em;
