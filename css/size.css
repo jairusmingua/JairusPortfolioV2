@@ -43,6 +43,19 @@
     ul.expand{
         height: 20vh;
     }
+    .works-body{
+        grid-template: "work-label""gallery";
+    }
+    .my-works-button{
+        display: flex;
+    }
+    .my-works-button>.button{
+        margin: 0;
+    }
+    .gallery-root{
+        grid-template-columns: 1fr 1fr;
+    }
+    
   }
   @media only screen and (max-width: 500px) {
     .body {
@@ -281,5 +294,21 @@
     }
     ul.expand{
         height: 20vh;
+    }
+    .gallery-root{
+        grid-template-columns: 1fr 1fr;
+    }
+    .works-body{
+        grid-template: "work-label""gallery";
+    }
+    .my-works-container>p{
+        margin: 0;        
+    }
+    .my-works-button{
+        display: flex;
+    }
+    .my-works-button>.button{
+        margin: 0;
+        font-size: 0.7em;
     }
 }

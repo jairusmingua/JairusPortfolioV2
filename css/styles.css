@@ -389,13 +389,49 @@ canvas{
     /* width: 100%; */
     display: grid;
     grid-gap: 2vw;
-    grid-template: "container graph";
-    grid-template-columns: auto minmax(100px, 40%);
+    grid-template: "gallery work-label";
+    grid-template-columns: auto minmax(100px, 30%);
 }
 .gallery{
-    height: 70vh;
+    
+    height: 90vh;
     width: 100%;
-    background:black;
+    grid-area: gallery
+}
+.my-works-container{
+    grid-area: work-label
+}
+.gallery-root{
+    height: 40vw;
+    width: 100%;
+    
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.gallery-root>div{
+    
+    height: 100%;
+    width: 100%;
+}
+.gallery-root>div>img{
+    object-fit: contain;
+}
+.repo-root{
+    height: 80%;
+    width: 100%;
+    margin-top:1em;
+    display: block;
+    overflow-y: scroll;
+}
+.repo-item{
+    min-height: 4em;
+    margin:1px 5px 1px 0px;
+
+}
+.repo-name{
+    font-weight: 700;
+    font-size: 2rem;
 }
 .button{
     margin: 2em 0em 2em 0em;
