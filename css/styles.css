@@ -420,14 +420,26 @@ canvas{
 .repo-root{
     height: 80%;
     width: 100%;
-    margin-top:1em;
+    
     display: block;
     overflow-y: scroll;
+    
+}
+.repo-root::-webkit-scrollbar{
+    display: none;
 }
 .repo-item{
     min-height: 4em;
-    margin:1px 5px 1px 0px;
+    padding: 1em;
+    margin: 20px 5px 20px 0px;
+    transform: translateX(5px);
     color: #707070;
+    box-shadow: -1px 2px 7px #b8b8b881;
+    border-radius: 4px;
+    width: 80%
+}
+.repo-item>a{
+    color: grey;
 }
 .repo-name{
     font-weight: 700;
@@ -448,6 +460,6 @@ canvas{
     width: 7em;
     align-items: center;
     cursor: pointer;
-    box-shadow: -1px 2px 5px grey;
+    box-shadow: -1px 2px 5px #b8b8b881;
     background: linear-gradient(to left, #00C2FF, #C45BD8 )
 }

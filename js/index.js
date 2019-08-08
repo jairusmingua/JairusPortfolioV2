@@ -19,12 +19,12 @@ workprogbtn.addEventListener("click",()=>{
             let repo_description=document.createElement("DIV");
             repo_description.className ="repo-description";
             repo_description.textContent = repo.description;
-            div.appendChild(repo_name);
-            div.appendChild(repo_description);
+            a.appendChild(repo_name);
+            a.appendChild(repo_description);
             
-            a.appendChild(div);
+            div.appendChild(a);
             
-            root.appendChild(a);
+            root.appendChild(div);
         })
         document.querySelector(".gallery").appendChild(root);
     })
