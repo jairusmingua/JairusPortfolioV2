@@ -415,7 +415,7 @@ canvas{
     width: 100%;
 }
 .gallery-root>div>img{
-    object-fit: contain;
+    object-fit: cover;
 }
 .repo-root{
     height: 80%;
